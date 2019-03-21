@@ -45,7 +45,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  #since: 2019
 
   # Icon between year and copyright info.
   icon: user
@@ -53,14 +53,14 @@ footer:
   # If not defined, will be used `author` from Hexo main config.
   copyright:
   # -------------------------------------------------------------
-  # Hexo link (Powered by Hexo).
-  powered: true
+  # Hexo link (Powered by Hexo). 底部的Hexo 强力驱动
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -94,8 +94,8 @@ index_with_subtitle: false
 menu:
   home: / || home
   #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -111,9 +111,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -154,7 +154,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /uploads/photo.png
 
 # Table Of Contents in the Sidebar
 toc:
@@ -193,8 +193,8 @@ sidebar:
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
 
-  # Scroll percent label in b2t button.
-  scrollpercent: false
+  # Scroll percent label in b2t button. top按钮显示进度
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -247,7 +247,7 @@ post_wordcount:
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
-# Declare license on posts
+# Declare license on posts   开启版权声明   我自定义了一个
 post_copyright:
   enable: false
   license: CC BY-NC-SA 3.0
@@ -353,7 +353,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: f877e1e7f484e79496d2dd32f9106360
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -374,17 +374,17 @@ changyan:
   appkey:
 
 
-# Valine.
+# Valine.  评论区
 # You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
+# more info please open https://valine.js.org 评论系统
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid: 2iaj1iPxUDau0PnYoBCUQ3kJ-gzGzoHsz  # your leancloud application appid
+  appkey: Ajqj0Yo31VU8CSHGM2co6war  # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
-  avatar: mm # gravatar style
+  placeholder: 说点什么吧！ # comment box placeholder
+  avatar: identicon  # mmgravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
 
@@ -531,9 +531,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: 2iaj1iPxUDau0PnYoBCUQ3kJ-gzGzoHsz
+  app_key: Ajqj0Yo31VU8CSHGM2co6war
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -570,9 +570,9 @@ busuanzi_count:
 # Tencent MTA ID
 # tencent_mta:
 
-
+#百度推送  SEO
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -601,10 +601,10 @@ algolia_search:
     hits_empty: "We didn't find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
-# Local search
+# Local search  局部搜索
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -695,7 +695,14 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
+#canvas_nest:   #错误，不可以在这里设置，（不知道为什么） 要在D:\Users\fuxiy\blog\themes\next\source\lib\canvas-nest里设置
+#  enable: true
+#  onmobile: true # display on mobile or not
+#  color: '150,108,255' # RGB values, use ',' to separate
+#  opacity: 0.5 # the opacity of line: 0~1
+#  zIndex: -1 # z-index property of the background
+#  count: 99 # the number of lines
 
 # three_waves
 three_waves: false
@@ -772,7 +779,7 @@ vendors:
   pace:
   pace_css:
 
-  # Internal version: 1.0.0
+  # Internal version: 1.0.0   用来调节 canvas_nest动态背景的属性 在D:\Users\fuxiy\blog\themes\next\source\lib\canvas-nest
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
@@ -811,3 +818,10 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+# baidu  百度Html标签验证
+baidu_site_verification: true
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+enabled: true
