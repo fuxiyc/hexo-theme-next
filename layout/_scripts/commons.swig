@@ -1,4 +1,10 @@
-<script src="{{ url_for(theme.js) }}/utils.js?v={{ version }}"></script>
-{%- if theme.motion.enable %}
-  <script src="{{ url_for(theme.js) }}/motion.js?v={{ version }}"></script>
-{%- endif %}
+{%
+  set js_commons = [
+    'utils.js',
+    'motion.js'
+  ]
+%}
+
+{% for common in js_commons %}
+  <script src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+{% endfor %}

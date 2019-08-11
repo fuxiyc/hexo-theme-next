@@ -1,12 +1,14 @@
 // TODO: Refactor.
+
 .page-home, .page-post-detail {
   .post-type-quote {
-    .post-header, .post-tags {
-      display: none;
+    .post-header,
+    .post-tags {
+      hide();
     }
 
     blockquote {
-      @extend .blockquote-center;
+      @extend .blockquote-center
     }
   }
 }
